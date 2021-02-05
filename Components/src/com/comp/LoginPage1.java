@@ -9,6 +9,7 @@ public class LoginPage1 extends JFrame implements ActionListener {
      private JButton buttonOK;
      private JButton buttonCancel;
         static JFrame frame;
+        static JButton button;
         public static void main(String[] args) {
 
             JFrame frame=new JFrame("LOGIN PAGE");
@@ -23,12 +24,13 @@ public class LoginPage1 extends JFrame implements ActionListener {
 
              JPasswordField passwordField =new JPasswordField();
 
-             JRadioButton radioButton=new JRadioButton();
+             JRadioButton radioButton=new JRadioButton("MALE");
 
-             JRadioButton radioButton1=new JRadioButton();
+             JRadioButton radioButton1=new JRadioButton("FEMALE");
 
-             JButton button=new JButton("LOGIN");
+              button=new JButton("LOGIN");
 
+             LoginPage1 loginPage=new LoginPage1();
 
              label.setBounds(0,70,120,30);
 
@@ -47,20 +49,37 @@ public class LoginPage1 extends JFrame implements ActionListener {
              button.setBounds(70,400,130,30);
 
              frame.add(label);
-
              frame.add(label1);
-
              frame.add(label2);
-
-
-
-
-
-
-
+             frame.add(textField);
+             frame.add(passwordField);
+             frame.add(radioButton);
+             frame.add(radioButton1);
+             frame.add(button);
+             button.addActionListener(loginPage);
+             frame.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+             frame.setSize(600,600);
+             frame.setLayout(null);
+             frame.setVisible(true);
 
     }
     public void actionPerformed(ActionEvent actionEvent) {
+            String s=actionEvent.getActionCommand();
 
+            if (s.equals("LOGIN")){
+                JDialog dialog=new JDialog(frame,"click");
+                JPanel panel=new JPanel();
+                JLabel label=new JLabel("THIS IS dialog");
+
+                panel.add(label);
+                panel.setBorder(BorderFactory.createLineBorder(Color.black));
+                panel.setBackground(Color.YELLOW);
+                dialog.add(panel);
+
+                dialog.setLocation(300,300);
+                dialog.setSize(200,200);
+                dialog.setVisible(true);
+
+            }
     }
     }

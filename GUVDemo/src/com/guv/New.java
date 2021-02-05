@@ -6,6 +6,7 @@ import java.awt.event.*;
 class New{
 
     private JPanel contentPane;
+    private JPanel panel1;
 
     public static void main(String[] args) {
         Test obj=new Test();

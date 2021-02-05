@@ -11,7 +11,6 @@ public class JWindowDemo1 extends JFrame implements ActionListener {
 
       static JFrame f;
 
-
         public static void main(String[] args) {
             f = new JFrame("frame");
 
@@ -36,7 +35,7 @@ public class JWindowDemo1 extends JFrame implements ActionListener {
             String s = e.getActionCommand();
             if (s.equals("click")) {
 
-                JWindow w = new JWindow(f);
+                JWindow w = new JWindow();
 
                 JPanel p = new JPanel();
 
